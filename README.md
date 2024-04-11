@@ -1,1 +1,1 @@
-# game-dec-project-2d-isometric-rpg
+# game-dev-project-2d-isometric-rpg

@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "game-project-isometric-rpg.sln"
+    "dotnet.defaultSolution": "game-dev-project-2d-isometric-rpg.sln"
 }

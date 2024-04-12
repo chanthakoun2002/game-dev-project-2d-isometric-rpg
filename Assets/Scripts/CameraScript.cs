@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
     public Vector3 offset;
     void Start()
     {
-        
+        // Add Comment from TestBranch
     }
 
     // Update is called once per frame

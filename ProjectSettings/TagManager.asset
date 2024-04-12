@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ground
+    uniqueID: 2567422029
+    locked: 0
+  - name: road&water
+    uniqueID: 768965611
+    locked: 0
+  - name: rocks
+    uniqueID: 2382851937
+    locked: 0
+  - name: structures
+    uniqueID: 3264790357
+    locked: 0
+  - name: Player
+    uniqueID: 1510804979
+    locked: 0

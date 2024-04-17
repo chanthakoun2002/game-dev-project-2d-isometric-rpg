@@ -21,9 +21,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
+        if (canMove)//  <-- this is not being used right now
         {
-            // Get keyboard inputs
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
@@ -54,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+
+    // below code is not used currently  
     public void StopMovement()
     {
         // Set canMove flag to false to prevent movement

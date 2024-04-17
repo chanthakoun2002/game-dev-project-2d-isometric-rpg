@@ -17,7 +17,7 @@ public class PlayeCombat : MonoBehaviour
 
     //private bool isAttacking = false; // Flag to track whether the player is attacking
 
-    public float attackRate = 2f;
+    public float attackRate = 2f; //allows attacks per sec
     float nextAttackTime = 0f;
 
     // Update is called once per frame
@@ -87,7 +87,7 @@ public class PlayeCombat : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmosSelected() //allow for attack radius to be seen in unity
     {
         if (attackPoint == null)
             return;

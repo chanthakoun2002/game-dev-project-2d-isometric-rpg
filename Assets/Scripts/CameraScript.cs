@@ -6,14 +6,9 @@ public class CameraScript : MonoBehaviour
 {
    public Transform player;
     public Vector3 offset;
-    void Start()
-    {
-        // Add Comment from TestBranch
-    }
-
-    // Update is called once per frame
     void Update () 
- {
-     transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, offset.z); 
- }
+    {
+        //will allow game camera to follow the player
+        transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, offset.z); 
+    }
 }

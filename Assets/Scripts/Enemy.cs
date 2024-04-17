@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
 
         //play hurt animation
+        // ...no animation yet
 
         if(currentHealth <= 0){
             Die();

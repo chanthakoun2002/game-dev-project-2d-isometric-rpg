@@ -8,17 +8,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     public Animator animator;
     private SpriteRenderer spriteRenderer;
-
     private bool canMove = true; // Flag to track whether the player can move
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (canMove)//  <-- this is not being used right now

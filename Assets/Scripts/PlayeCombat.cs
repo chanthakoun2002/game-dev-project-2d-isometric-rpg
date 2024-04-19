@@ -6,7 +6,7 @@ using UnityEngine.Timeline;
 public class PlayeCombat : MonoBehaviour
 {
     public Animator animator;
-    public PlayerMovement playerMovement; // Reference to the PlayerMovement script
+    public PlayerMovement playerMovement;
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -17,7 +17,7 @@ public class PlayeCombat : MonoBehaviour
 
     //private bool isAttacking = false; // Flag to track whether the player is attacking
 
-    public float attackRate = 2f; //allows attacks per sec
+    public float attackRate = 2f; //allowed attacks per sec
     float nextAttackTime = 0f;
 
     // Update is called once per frame

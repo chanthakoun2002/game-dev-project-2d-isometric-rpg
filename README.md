@@ -50,3 +50,22 @@ The final project will feature:
 
 The project will be deployed on PC and will be compatible with Windows and other PC operating systems.
 
+###Project Updates
+
+**Date:** April 14, 2024
+
+**Features Added/Updated Since Last Update:**
+- Implemented player movement along with combat
+- Added basic enemy ability to deal damage to player along with animations
+- Integrated health bars for players to visualize health status.
+- Designed and implemented a starting main menu that for now allows start game into the test level and the ability to quit the game.
+
+**Issues Encountered:**
+- Encountered an issue with animations with the timing of triggers and smoothness of animations to work when needed.
+- Faced challenges with implementing code for the enemy to do damage to the player
+- 
+
+**Lessons Learned:**
+- Importance of iterative development: Breaking down tasks into smaller iterations allows for more manageable progress and easier troubleshooting of issues.
+- Prioritizing performance optimization: As the project scales, optimizing performance becomes increasingly crucial to ensure smooth gameplay experience across different platforms.
+

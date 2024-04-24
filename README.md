@@ -38,7 +38,7 @@ The final project will feature:
 - NPC dialogue system.
 - Player health management.
 
-- If time permits, I would like to implement:
+- ## If time permits, I would like to implement:
 
 - Dynamic events and random encounters.
 - Skill and leveling system for players.

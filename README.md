@@ -25,7 +25,7 @@ The final project will feature:
 - Enemy and player combat with AI.
 - Save/Load system.
 - 
-- ## Planned Features
+### Planned Features
 
 - User/player character movement (WASD controls).
 - Combat controls via mouse directions and clicks.
@@ -38,19 +38,17 @@ The final project will feature:
 - NPC dialogue system.
 - Player health management.
 
-- ## If time permits, I would like to implement:
+### If time permits, I would like to implement:
 
 - Dynamic events and random encounters.
 - Skill and leveling system for players.
 - More advanced AI behaviors for enemies and NPCs.
 - Interactive environment and NPCs.
-
 - 
 ### Deployment
-
 The project will be deployed on PC and will be compatible with Windows and other PC operating systems.
 
-###Project Updates
+## Project Updates
 
 **Date:** April 14, 2024
 
@@ -61,11 +59,11 @@ The project will be deployed on PC and will be compatible with Windows and other
 - Designed and implemented a starting main menu that for now allows start game into the test level and the ability to quit the game.
 
 **Issues Encountered:**
-- Encountered an issue with animations with the timing of triggers and smoothness of animations to work when needed.
-- Faced challenges with implementing code for the enemy to do damage to the player
-- 
+- Encountered an issue with animations with the timing of triggers and smoothness of animations to work when needed (WORK IN PROGRESS)
+- Encountered a bug when enemy triggered it's "hurt" animation the enemy would freeze and no longer work (FIXED)
+- Faced challenges with implementing code for the enemy to do damage to the player (FIXED)
 
 **Lessons Learned:**
 - Importance of iterative development: Breaking down tasks into smaller iterations allows for more manageable progress and easier troubleshooting of issues.
-- Prioritizing performance optimization: As the project scales, optimizing performance becomes increasingly crucial to ensure smooth gameplay experience across different platforms.
+- Prioritizing performance optimization: As the project scales, optimizing performance becomes increasingly crucial to ensure a smooth gameplay experience across different platforms.
 

@@ -59,7 +59,7 @@ The project will be deployed on PC and will be compatible with Windows and other
 - Designed and implemented a starting main menu that for now allows start game into the test level and the ability to quit the game.
 
 **Issues Encountered:**
-- Encountered an issue with animations with the timing of triggers and smoothness of animations to work when needed (WORK IN PROGRESS)
+- Encountered an issue with animations with the timing of triggers and smoothness of animations to work when needed when used in scripts(WORK IN PROGRESS)
 - Encountered a bug when enemy triggered it's "hurt" animation the enemy would freeze and no longer work (FIXED)
 - Faced challenges with implementing code for the enemy to do damage to the player (FIXED)
 

@@ -46,24 +46,26 @@ The final project will feature:
 - Interactive environment and NPCs.
 - 
 ### Deployment
-The project will be deployed on PC and will be compatible with Windows and other PC operating systems.
+The project will be deployed on PC and will be compatible with Windows and other PC operating systems (mac, linux).
 
 ## Project Updates
 
-**Date:** April 14, 2024
+**Date:** April 27, 2024
 
 **Features Added/Updated Since Last Update:**
 - Implemented player movement along with combat
-- Added basic enemy ability to deal damage to player along with animations
-- Integrated health bars for players to visualize health status.
-- Designed and implemented a starting main menu that for now allows start game into the test level and the ability to quit the game.
+- Added basic enemy ability to deal damage to player along with attack animations
+- Integrated health bars for player to visualize health status.
+- implemented a starting main menu that for now allows starting the game into the test level and the ability to quit the game.
 
 **Issues Encountered:**
 - Encountered an issue with animations with the timing of triggers and smoothness of animations to work when needed when used in scripts(WORK IN PROGRESS)
 - Encountered a bug when enemy triggered it's "hurt" animation the enemy would freeze and no longer work (FIXED)
 - Faced challenges with implementing code for the enemy to do damage to the player (FIXED)
+- Encountered an issue with the unity engine throwing errors due to certain scripts even when the scripts were not being used (FIXED)
 
 **Lessons Learned:**
 - Importance of iterative development: Breaking down tasks into smaller iterations allows for more manageable progress and easier troubleshooting of issues.
 - Prioritizing performance optimization: As the project scales, optimizing performance becomes increasingly crucial to ensure a smooth gameplay experience across different platforms.
+- Importance of keeping track of code: As more scripts and codes are added it increasingly becomes more overwhealming and keeping track with note's and code comments becomes increasingly important.
 

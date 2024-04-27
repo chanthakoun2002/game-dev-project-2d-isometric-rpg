@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
         //keyboard inputs
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
@@ -32,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Flip character sprite when moving left
         if (horizontalInput < 0)
+=======
+        if (canMove)//  <-- this if statement is not being used right now
+>>>>>>> Stashed changes
         {
             spriteRenderer.flipX = true;
         }

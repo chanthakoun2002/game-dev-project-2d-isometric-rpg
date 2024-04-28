@@ -69,3 +69,7 @@ The project will be deployed on PC and will be compatible with Windows and other
 - Prioritizing performance optimization: As the project scales, optimizing performance becomes increasingly crucial to ensure a smooth gameplay experience across different platforms.
 - Importance of keeping track of code: As more scripts and codes are added it increasingly becomes more overwhealming and keeping track with note's and code comments becomes increasingly important.
 
+
+https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/121994183/a785f6bc-438a-4807-a80f-e60157f9c1c8
+
+

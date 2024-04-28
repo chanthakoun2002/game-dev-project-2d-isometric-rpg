@@ -6,17 +6,55 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
-    int currentHealth;
+    private int currentHealth;
 
     public Animator animator;
+    public int damage = 5; //damage enemy can do
+    public float attackCooldown = 2f; // Adjust as needed
+    private bool canAttack = true;
 
     void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage){
-        //note: damage on enemy is based on attackDamage set in playerCombat script
+    private void Update()
+    {
+        // if (canAttack)
+        // {
+        //     StartCoroutine(AttackCooldown());
+        //     animator.SetTrigger("Attack");
+        // }
+    }
+
+    private IEnumerator AttackCooldown()
+    {
+        //a cooldown before the enemy can attack the player again
+        canAttack = false;
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+
+            
+            Player player = other.gameObject.GetComponent<Player>();
+            if (player != null  && canAttack)
+            {
+
+                animator.SetTrigger("Attack");
+                player.TakeDamage(damage);
+                StartCoroutine(AttackCooldown());
+                
+            }
+        }
+    }
+
+    public void TakeDamage(int damage){ //this function if for the damage taken to enemy
+        
         currentHealth -= damage;
 
         //play hurt animation
@@ -30,7 +68,6 @@ public class Enemy : MonoBehaviour
 
     void Die(){
         Debug.Log("Enemy Died");
-        //die animation
         animator.SetTrigger("Death");
 
         //disable the enemy

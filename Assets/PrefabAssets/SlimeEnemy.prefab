@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 2707807927746178004}
+  damage: 16
+  attackCooldown: 2
 --- !u!95 &2707807927746178004
 Animator:
   serializedVersion: 5

@@ -24,7 +24,7 @@ public class PlayeCombat : MonoBehaviour
     void Update()
     {
         if(Time.time >= nextAttackTime){
-            if(Input.GetKeyDown(KeyCode.Space)){
+            if(Input.GetKeyDown(KeyCode.Space)){ //attack is currently set for the space bar
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -39,6 +39,32 @@ public class PlayeCombat : MonoBehaviour
         // }
     }
 
+    
+    void Attack()
+    {
+        
+
+        // Play attack animation
+        animator.SetTrigger("Attack");
+
+        // Detect enemies in range
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        // Damage enemies
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("we hit" + enemy.name);
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage); 
+        }
+    }
+
+    void OnDrawGizmosSelected() //allow for attack radius to be seen in unity
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
     // IEnumerator AttackCoroutine()
     // {
     //     // Set isAttacking flag to true
@@ -69,29 +95,4 @@ public class PlayeCombat : MonoBehaviour
     //     // Resume movement
     //     //playerMovement.ResumeMovement();
     // }
-    void Attack()
-    {
-        
-
-        // Play attack animation
-        animator.SetTrigger("Attack");
-
-        // Detect enemies in range
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-        // Damage enemies
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            Debug.Log("we hit" + enemy.name);
-            enemy.GetComponent<Enemy>().TakeDamage(attackDamage); 
-        }
-    }
-
-    void OnDrawGizmosSelected() //allow for attack radius to be seen in unity
-    {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
 }

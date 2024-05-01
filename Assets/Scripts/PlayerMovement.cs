@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        if (canMove)//  <-- this is not being used right now
+        if (canMove)//  <-- this is not being used or triggered right now 
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
             // Calculate the movement direction based on input
             Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
 
-            // Apply movement to the Rigidbody
             rb.velocity = movement * moveSpeed;
 
             // Flip character sprite when moving left

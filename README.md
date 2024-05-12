@@ -88,5 +88,6 @@ https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/1219
 - Understanding the intricacies of scene management in Unity, including proper initialization and cleanup procedures to prevent unintended behavior
 - Importance of thorough testing and debugging to identify and resolve issues promptly
 - Utilizing Unity's NavMesh system effectively for AI pathfinding, including fine-tuning parameters and optimizing NavMesh baking settings
+  
 https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/121994183/60d10300-ee53-4618-8ed6-dcefabf611e0
 

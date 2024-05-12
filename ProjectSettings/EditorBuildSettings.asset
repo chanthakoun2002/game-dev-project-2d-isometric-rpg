@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6838b22630edcee49aa7f05d3b2b6134
   - enabled: 1
+    path: Assets/Scenes/Scene_town.unity
+    guid: b44547a53c335024fa0ce3e0e2e3c637
+  - enabled: 1
+    path: Assets/Scenes/Scene_CliffSide.unity
+    guid: b1782ee1980dd6043b15566f1486074a
+  - enabled: 1
+    path: Assets/Scenes/Scene_ForestPath.unity
+    guid: 1ebe25684c272a84896107fa6f7b28a6
+  - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

@@ -72,4 +72,19 @@ The project will be deployed on PC and will be compatible with Windows and other
 
 https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/121994183/a785f6bc-438a-4807-a80f-e60157f9c1c8
 
+**Date:** May 12, 2024
 
+**Features Added/Updated Since Last Update:**
+- Implemented enemy pathfinding to track and follow the player
+- added multiple scenes which the player can travel between
+- allow the player to have data (health data) be kept/saved between scenes but reset upon new game start
+
+**Issues Encountered:**
+- Still encountering issues with the smoothness of animations and how they are being triggered, especially animations used by enemies
+- currently encountering a bug on certain scenes where an enemy will not properly pathfinder but will exit the nav mesh area and will attack but not track the player
+- encountered an issue where the player loaded in a scene the player character would multiply
+
+**Lessons Learned:**
+- Understanding the intricacies of scene management in Unity, including proper initialization and cleanup procedures to prevent unintended behavior
+- Importance of thorough testing and debugging to identify and resolve issues promptly
+- Utilizing Unity's NavMesh system effectively for AI pathfinding, including fine-tuning parameters and optimizing NavMesh baking settings

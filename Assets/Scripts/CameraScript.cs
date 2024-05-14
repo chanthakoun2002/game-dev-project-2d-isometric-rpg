@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-   public Transform player;
+    public string playerTag = "Player";
     public Vector3 offset;
-    void Update () 
+
+    private Transform playerTransform;
+
+    void Update()
     {
-        //will allow game camera to follow the player
-        transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, offset.z); 
+        // Find the player object by tag if it hasn't been found yet
+        if (playerTransform == null)
+        {
+            GameObject playerObject = GameObject.FindGameObjectWithTag(playerTag);
+            if (playerObject != null)
+            {
+                playerTransform = playerObject.transform;
+            }
+        }
+        else
+        {
+            // Follow the player if it has been found
+            transform.position = new Vector3(playerTransform.position.x + offset.x, playerTransform.position.y + offset.y, offset.z);
+        }
     }
 }

@@ -25,6 +25,17 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
     }
 
+    public void RestoreHealth(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthBar.SetHealth(currentHealth);
+        PlayerData.SavePlayerHealth(currentHealth);
+    }
+
 
     public void TakeDamage(int damage)
     {

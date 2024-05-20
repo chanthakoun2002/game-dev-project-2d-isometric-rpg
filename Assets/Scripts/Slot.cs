@@ -8,10 +8,12 @@ public class Slot : MonoBehaviour
     private Inventory inventory;
     public int i;
     private void Start() {
-         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+         
     }
+    
     void Update()
     {
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         if(transform.childCount <= 0){
             inventory.isFull[i] = false;
         }
@@ -19,7 +21,9 @@ public class Slot : MonoBehaviour
     public void DropItem(){
         foreach (Transform child in transform){
             child.GetComponent<Spawn>().spawnDroppedItem();
-            GameManager.Destroy(child.gameObject);
+            inventory.isFull[i] = false;
+            Destroy(child.gameObject);
+            
         }
     }
 }

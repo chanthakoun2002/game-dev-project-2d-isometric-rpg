@@ -8,7 +8,7 @@ public class AiChase : MonoBehaviour
 {
     [SerializeField] float chaseRange = 10f; // Adjustable chase range
     NavMeshAgent agent;
-    Enemy enemy; // Reference to the Enemy script
+    Enemy enemy;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
@@ -19,7 +19,6 @@ public class AiChase : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        // Get reference to the Enemy script attached to the same GameObject
         enemy = GetComponent<Enemy>();
 
         enemy.OnDeath.AddListener(OnEnemyDeath);
@@ -34,32 +33,32 @@ public class AiChase : MonoBehaviour
         // {
         //     Debug.LogError("Player object not found. Make sure it is tagged as 'Player'.");
         // }
-        // Start coroutine to find the player object after a short delay
+
+
+        //find the player object after a short delay
         StartCoroutine(FindPlayer());
     }
 
     private void Update()
     {
-        // Check if the enemy is alive before updating its movement
         if (!enemy.isDead)
         {
-            // Check if the target is within the chase range
+            //check if within the chase range
             if (target != null && Vector3.Distance(transform.position, target.position) <= chaseRange)
             {
                 agent.SetDestination(target.position);
-                // Calculate the speed of the NavMeshAgent
+                //get speed of agent
                 float speed = agent.velocity.magnitude;
-                // Update the animator parameter based on the speed
+
                 animator.SetFloat("Speed", speed);
-                // Flip the sprite renderer based on movement direction
                 if (agent.velocity.x < 0)
                 {
-                    // Enemy is moving left
+                    //moving left
                     spriteRenderer.flipX = false;
                 }
                 else if (agent.velocity.x > 0)
                 {
-                    // Enemy is moving right
+                    //moving right
                     spriteRenderer.flipX = true;
                 }
             }
@@ -73,7 +72,7 @@ public class AiChase : MonoBehaviour
         }
         else
         {
-            // Stop moving if the enemy is dead
+            // Stop moving if dead
             agent.SetDestination(transform.position);
             animator.SetFloat("Speed", 0f);
         }
@@ -83,11 +82,9 @@ public class AiChase : MonoBehaviour
         //delay finding the player because the player loads in at a diffrent time
         //and enemy cant find them if this is put into the start at the start of the game....
         yield return new WaitForSeconds(0.5f);
-        // Search for the player object by tag
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
-            // Set the player object as the target
             target = playerObject.transform;
         }
         else
@@ -97,18 +94,16 @@ public class AiChase : MonoBehaviour
     }
     void OnDrawGizmosSelected()
     {
-        // Draw a wire sphere to visualize the chase range
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
     }
-    // Method to handle enemy's death
     private void OnEnemyDeath()
     {
         // Stop moving when the enemy dies
         agent.SetDestination(transform.position);
     }
 
-    private Transform target; // Store the reference to the player object
+    private Transform target;
 
     // Method to set the target (used if player object is not found in Start)
     public void SetTarget(Transform newTarget)

@@ -11,7 +11,9 @@ public class Spawn : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     public void spawnDroppedItem(){
-        Vector2 playerPos = new Vector2(player.position.x, player.position.y  +3);
+        Vector2 playerPos = new(player.position.x, player.position.y  + 1);
+        
         Instantiate(item, playerPos, Quaternion.identity);
+        Debug.Log("New item has Spawned");
     }
 }

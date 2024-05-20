@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause(){
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
-        Debug.Log("Pause");
+        Debug.Log("Game Pause");
     }
     public void Menu(){
         SceneManager.LoadScene(0); //main menu

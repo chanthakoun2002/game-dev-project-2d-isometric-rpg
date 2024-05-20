@@ -2,19 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+
 public class LevelMove_Ref : MonoBehaviour
 {
     public int sceneBuildIndex;
- 
-    // Level move zoned enter, if collider is a player
-    // Move game to another scene
-    private void OnTriggerEnter2D(Collider2D other) {
-        print("Trigger Entered");
-        if(other.tag == "Player") {
-            // Player entered, so move level
-            print("Switching Scene to " + sceneBuildIndex);
-            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+
+    private SceneTransitionManager sceneTransitionManager;
+
+    private void Start()
+    {
+        sceneTransitionManager = FindObjectOfType<SceneTransitionManager>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (sceneTransitionManager != null)
+            {
+                sceneTransitionManager.ChangeScene(sceneBuildIndex);
+            }
+            else
+            {
+                Debug.LogError("SceneTransitionManager not found.");
+            }
         }
     }
 }

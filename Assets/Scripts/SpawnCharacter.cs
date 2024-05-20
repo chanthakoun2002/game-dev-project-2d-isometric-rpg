@@ -5,10 +5,18 @@ using UnityEngine;
 
 public class SpawnCharacter : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
-    void Start()
+    [SerializeField] private GameObject playerPrefab;
+
+    void Awake()
     {
-        Instantiate(player, transform.position, quaternion.identity);
+        //DontDestroyOnLoad(gameObject);
+        SpawnPlayer();
+    }
+
+    void SpawnPlayer()
+    {
+        GameObject player = Instantiate(playerPrefab, transform.position, quaternion.identity);
+        
+        player.transform.SetParent(transform);
     }
 }

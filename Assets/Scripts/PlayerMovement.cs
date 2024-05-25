@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
-            // Calculate the movement direction based on input
             Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
 
             rb.velocity = movement * moveSpeed;
@@ -49,16 +48,14 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    // below code is not used currently  
+    // below code is not used currently
     public void StopMovement()
     {
-        // Set canMove flag to false to prevent movement
         canMove = false;
     }
 
     public void ResumeMovement()
     {
-        // Set canMove flag to true to allow movement
         canMove = true;
     }
 }

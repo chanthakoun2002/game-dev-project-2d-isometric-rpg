@@ -18,10 +18,9 @@ public class Enemy : MonoBehaviour
     public Transform searchRadius;
     public float attackRadius = 0.5f;
     public LayerMask playerLayer;
-
-    // Event to be invoked when the enemy dies
     public UnityEvent OnDeath;
     public bool isDead = false;
+    public KillCount playerScore;
 
     private void Start()
     {
@@ -30,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (canAttack && allowAttackCooldown)
+        if (canAttack == true  && allowAttackCooldown)
         {
             Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, playerLayer);
 
@@ -70,12 +69,13 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
             Die();
     }
-    private void Die()
+    public void Die()
     {
+        
         Debug.Log("Enemy Died");
         animator.SetTrigger("Death");
+        playerScore.AddScore(1);//kill count for the player   //WIP
 
-        // Invoke the OnDeath event when the enemy dies
         if (OnDeath != null)
         {
             OnDeath.Invoke();
@@ -92,6 +92,6 @@ public class Enemy : MonoBehaviour
             canAttack = false;
         }
         // Disable the entire GameObject
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);//WIP
     }
 }

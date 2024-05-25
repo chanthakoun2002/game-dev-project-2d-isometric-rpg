@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,12 +21,24 @@ public class SceneTransitionManager : MonoBehaviour
             yield return null;
         }
     }
+    public void SaveSceneIndex()
+    {//save the build index for next scene to see
+        int lastSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Index Saved" + lastSceneIndex);
+        PlayerPrefs.SetInt("SceneIndex", lastSceneIndex);
+        PlayerPrefs.Save();
+    }
+    public static int LoadLastIndex()
+    {
+        return PlayerPrefs.GetInt("SceneIndex"); //give the index of the last scene
+    }
 
     public void ChangeScene(int sceneIndex)
     {
         if (inventory != null)
         {
             inventory.SaveInventory();
+            
         }
         SceneManager.LoadScene(sceneIndex);
     }

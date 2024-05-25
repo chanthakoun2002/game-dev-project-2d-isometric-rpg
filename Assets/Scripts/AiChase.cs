@@ -6,7 +6,7 @@ using System.Collections;
 
 public class AiChase : MonoBehaviour
 {
-    [SerializeField] float chaseRange = 10f; // Adjustable chase range
+    [SerializeField] float chaseRange = 10f;
     NavMeshAgent agent;
     Enemy enemy;
     public Animator animator;
@@ -23,7 +23,6 @@ public class AiChase : MonoBehaviour
 
         enemy.OnDeath.AddListener(OnEnemyDeath);
 
-        // Find the player object dynamically using tag
         // GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         // if (playerObject != null)
         // {
@@ -43,11 +42,9 @@ public class AiChase : MonoBehaviour
     {
         if (!enemy.isDead)
         {
-            //check if within the chase range
             if (target != null && Vector3.Distance(transform.position, target.position) <= chaseRange)
             {
                 agent.SetDestination(target.position);
-                //get speed of agent
                 float speed = agent.velocity.magnitude;
 
                 animator.SetFloat("Speed", speed);
@@ -99,13 +96,11 @@ public class AiChase : MonoBehaviour
     }
     private void OnEnemyDeath()
     {
-        // Stop moving when the enemy dies
         agent.SetDestination(transform.position);
     }
 
     private Transform target;
 
-    // Method to set the target (used if player object is not found in Start)
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;

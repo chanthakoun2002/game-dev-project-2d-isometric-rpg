@@ -12,6 +12,6 @@ public class PlayerData : MonoBehaviour
     // Load player health from PlayerPrefs
     public static int LoadPlayerHealth()
     {
-        return PlayerPrefs.GetInt("PlayerHealth", 100); // Default health is 100 if not found
+        return PlayerPrefs.GetInt("PlayerHealth", 100);
     }
 }

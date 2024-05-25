@@ -21,20 +21,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Reset player health to the default value when the game starts
-        PlayerData.SavePlayerHealth(defaultPlayerHealth);
+        //PlayerData.SavePlayerHealth(defaultPlayerHealth);
 
         //Inventory.instance.ClearInventory();
+        //StartNewGame();//no matter where game is started it will start at the main menu
     }
 
     public void StartNewGame()//might change later
     {
-        //reset player health to the default value
         PlayerData.SavePlayerHealth(defaultPlayerHealth);
-
-        //clear the inventory for new game
         Inventory.instance.ClearInventory();
-
-        //load the first level or main menu scene
         SceneManager.LoadScene(0);
     }
 }

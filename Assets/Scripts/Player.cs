@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
     void Die()
     {
         Debug.Log("Player Died");
-        // Add animation and other logic later
+        //note: add other death features here
 
         PlayerData.SavePlayerHealth(maxHealth); // Reset health to default
 

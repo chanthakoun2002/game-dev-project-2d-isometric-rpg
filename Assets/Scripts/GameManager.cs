@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int defaultPlayerHealth = 100; //default player health value
+    public KillCount KillCount;
+    private Inventory inventory;
 
     void Awake()
     {
@@ -20,6 +22,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+
         // Reset player health to the default value when the game starts
         //PlayerData.SavePlayerHealth(defaultPlayerHealth);
 
@@ -32,5 +35,6 @@ public class GameManager : MonoBehaviour
         PlayerData.SavePlayerHealth(defaultPlayerHealth);
         Inventory.instance.ClearInventory();
         SceneManager.LoadScene(0);
+        KillCount.defaultScore();
     }
 }

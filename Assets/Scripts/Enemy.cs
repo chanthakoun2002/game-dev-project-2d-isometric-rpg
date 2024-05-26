@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        playerScore = GameObject.FindGameObjectWithTag("Player").GetComponent<KillCount>();
     }
 
     private void Update()
@@ -74,7 +75,8 @@ public class Enemy : MonoBehaviour
         
         Debug.Log("Enemy Died");
         animator.SetTrigger("Death");
-        playerScore.AddScore(1);//kill count for the player   //WIP
+        //when this enemy "dies" a point/kill is added to player score
+        playerScore.AddScore(1);
 
         if (OnDeath != null)
         {
@@ -92,6 +94,13 @@ public class Enemy : MonoBehaviour
             canAttack = false;
         }
         // Disable the entire GameObject
-        gameObject.SetActive(false);//WIP
+
+        StartCoroutine(DieAfterDealy());
+    }
+
+    private IEnumerator DieAfterDealy()
+    {
+        yield return new WaitForSeconds(2f);//wait for a moment before object is no longer seen
+        gameObject.SetActive(false);
     }
 }

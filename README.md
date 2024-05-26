@@ -80,9 +80,9 @@ https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/1219
 - allow the player to have data (health data) be kept/saved between scenes but reset upon new game start
 
 **Issues Encountered:**
-- Still encountering issues with the smoothness of animations and how they are being triggered, especially animations used by enemies
-- currently encountering a bug on certain scenes where an enemy will not properly pathfinder but will exit the nav mesh area and will attack but not track the player
-- encountered an issue where the player loaded in a scene the player character would multiply
+- Still encountering issues with the smoothness of animations and how they are being triggered, especially animations used by enemies (WIP)
+- currently encountering a bug on certain scenes where an enemy will not properly pathfinder but will exit the nav mesh area and will attack but not track the player (FIXED)
+- encountered an issue where the player loaded in a scene the player character would multiply (FIXED)
 
 **Lessons Learned:**
 - Understanding the intricacies of scene management in Unity, including proper initialization and cleanup procedures to prevent unintended behavior
@@ -91,3 +91,25 @@ https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/1219
   
 https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/121994183/60d10300-ee53-4618-8ed6-dcefabf611e0
 
+
+**Date:** May 26, 2024
+
+**Features Added/Updated Since Last Update:**
+- added inventory system for the player to pick up items and store them in their inventory
+- added in health potion item that players can pick up and store in their inventory and replenish health
+- improved loading for scenes so when a player loads from certain scenes they will load in specific locations depending on the last scene
+- added in a kill counter to track how many kills the player has
+- improved enemy so now when they die their sprite disappears after a little time has passed
+- added in a new scene and improvements to other scenes in the game including expanded maps and better looks to the environment
+- added in a pause button to open a menu to allow for resuming game or quite to menu and buttons for saving and loading games (button for save and load not used currently)
+
+**Issues Encountered:**
+- there is an issue with only scene index 1 with spawn locations not working correctly and the player always spawns at default (WIP)
+- issue with how the main menu is currently working and a new game is not wiping the last game data otherwise game will crash (a new issue that did not happen on the later versions) (WIP)
+- encountered an issue with inventory not saving between scenes (FIXED)
+- A small bug found that causes some potions to not able to be picked up by the player, which only happens randomly to some potions after the player has used all inventory space and then used all potions in inventory (WIP)
+
+**Lessons Learned:**
+- better understanding of how the unity engine works especially how playerPrefs work and how saving and loading data works with unity
+- understanding of how serializable objects work and how to implement them in unity
+  

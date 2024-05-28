@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     public HealthBar healthBar;
     public Animator animator;
+    
 
     void Start()
     {
@@ -55,7 +56,12 @@ public class Player : MonoBehaviour
         //note: add other death features here
 
         PlayerData.SavePlayerHealth(maxHealth); // Reset health to default
+        
+        //NOTE: future me maybe add a panel for usewr when dead to either load a save or exit main menu
 
-        GameManager.instance.StartNewGame();
+        //when player dies it will bring user to main menu
+        GameManager.instance.ClearGameData();
+        SceneManager.LoadScene(0);
+
     }
 }

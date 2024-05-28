@@ -12,8 +12,11 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Game Pause");
     }
     public void Menu(){
-        SceneManager.LoadScene(0); //main menu
+        
+        //when this is clicked this should also clear game data
+        GameManager.instance.ClearGameData();
         Time.timeScale = 1;
+        SceneManager.LoadScene(0); //main menu
     }
     public void Resume(){
         pauseMenu.SetActive(false);

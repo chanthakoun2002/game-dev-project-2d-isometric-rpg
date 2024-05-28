@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     private SceneTransitionManager sceneTransitionManager;
+    private GameManager gameManager;
+     void Start()
+    {
+        gameManager = GameManager.instance;
+    }
     public void PlayGame(){
-        //will load next scene in the build list
-        //sceneTransitionManager.SaveSceneIndex();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneTransitionManager.instance.SaveSceneIndex();
+        gameManager.StartNewGame();
     }
 
     //Note: add buttons for start and load here future me

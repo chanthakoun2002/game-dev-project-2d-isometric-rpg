@@ -5,8 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int defaultPlayerHealth = 100; //default player health value
-    public KillCount KillCount;
-    private Inventory inventory;
+    //private Inventory inventory;
 
     void Awake()
     {
@@ -20,21 +19,38 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); //destroy duplicate GameManager objects
         }
     }
-    void Start()
+    public void StartNewGame()
     {
-
-        // Reset player health to the default value when the game starts
-        //PlayerData.SavePlayerHealth(defaultPlayerHealth);
-
-        //Inventory.instance.ClearInventory();
-        //StartNewGame();//no matter where game is started it will start at the main menu
+        SceneManager.LoadScene(1);
+        ClearGameData();//if any data left remaining that is carried to main scene it will clear out when new game is started
     }
 
-    public void StartNewGame()//might change later
+    public void ClearGameData()
     {
+        //clears out the data of the player
         PlayerData.SavePlayerHealth(defaultPlayerHealth);
-        Inventory.instance.ClearInventory();
-        SceneManager.LoadScene(0);
-        KillCount.defaultScore();
+        if (Inventory.instance != null)
+        {
+            Inventory.instance.ClearInventory();
+        }
+        else
+        {
+            Debug.LogWarning("Inventory instance is null. Cannot clear inventory.");
+        }
+        if (KillCount.instance != null)
+        {
+            KillCount.instance.DefaultScore();
+        }
+        else
+        {
+            Debug.LogWarning("KillCount instance is null. Cannot reset score.");
+        }
+    }
+    public void ExitGame()
+    {
+        //clean up any ongoing game data
+        ClearGameData();
+        //exit the application
+        Application.Quit();
     }
 }

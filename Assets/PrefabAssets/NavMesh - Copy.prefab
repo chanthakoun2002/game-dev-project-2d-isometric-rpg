@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2886061065107258768}
   - component: {fileID: 782057251166924632}
   m_Layer: 0
-  m_Name: NavMesh
+  m_Name: NavMesh - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

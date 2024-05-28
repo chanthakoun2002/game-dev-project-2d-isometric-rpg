@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +5,20 @@ public class KillCount : MonoBehaviour
 {
     public int playerScore;
     public Text scoreText;
+    public static KillCount instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -14,16 +26,16 @@ public class KillCount : MonoBehaviour
         UpdateScoreText();
     }
 
-    public void AddScore(int scoreToAdd)
+    public void AddScore(int scoreToAdd) //when an enemy dies it will add a score or count here 
     {
         playerScore += scoreToAdd;
         UpdateScoreText();
         SaveScore();
     }
-    public void defaultScore()
+    public void DefaultScore()  //reset the score for when a new game is started or game is exited
     {
         playerScore = 0;
-        UpdateScoreText();
+        //UpdateScoreText();
         PlayerData.SavePlayerScore(playerScore);
     }
 
@@ -32,7 +44,7 @@ public class KillCount : MonoBehaviour
         scoreText.text = playerScore.ToString();
     }
 
-    private void SaveScore()
+    private void SaveScore() //each time a score is added iot will save and carry over to to other scenes
     {
         PlayerData.SavePlayerScore(playerScore);
     }

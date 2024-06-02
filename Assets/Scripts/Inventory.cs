@@ -13,7 +13,8 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     public bool[] isFull;
     public GameObject[] slots;
-
+    private bool loaded = false;
+    private List<string> inventoryItems = new List<string>();
     void Awake()
     {
         if (instance == null)
@@ -27,12 +28,6 @@ public class Inventory : MonoBehaviour
         }
         isFull = new bool[slots.Length];
     }
-
-    void Start()
-    {
-        //LoadInventory();
-    }
-
     public void AddItem(GameObject itemPrefab)
     {
         for (int i = 0; i < slots.Length; i++)
@@ -56,7 +51,6 @@ public class Inventory : MonoBehaviour
         {
             if (isFull[i])
             {
-
                 GameObject item = slots[i].transform.GetChild(0).gameObject;
                 string itemName = item.name.Replace("(Clone)", "").Trim();
                 data.items.Add(itemName);
@@ -64,17 +58,19 @@ public class Inventory : MonoBehaviour
         }
 
         string json = JsonUtility.ToJson(data);
-        PlayerPrefs.SetString("Inventory", json);
+        PlayerPrefs.SetString(PlayerData.InventoryKey, json);
         PlayerPrefs.Save();
         Debug.Log("Inventory saved: " + json);
+
     }
 
     public void LoadInventory()
-    {
-        //ClearInventory();//clear out old inventory
-        if (PlayerPrefs.HasKey("Inventory"))
+    {   
+        
+        if (!loaded && PlayerPrefs.HasKey(PlayerData.InventoryKey)){
+        if (PlayerPrefs.HasKey(PlayerData.InventoryKey))
         {
-            string json = PlayerPrefs.GetString("Inventory");
+            string json = PlayerPrefs.GetString(PlayerData.InventoryKey);
             InventoryData data = JsonUtility.FromJson<InventoryData>(json);
 
             for (int i = 0; i < data.items.Count; i++)
@@ -84,6 +80,7 @@ public class Inventory : MonoBehaviour
                 if (itemPrefab != null)
                 {
                     AddItem(itemPrefab);
+                    
                 }
                 else
                 {
@@ -91,7 +88,9 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Inventory loaded: " + PlayerPrefs.GetString("Inventory"));
+        loaded = true;
+        Debug.Log("Inventory loaded for scene: " + PlayerPrefs.GetString(PlayerData.InventoryKey));
+        }
     }
     public void ClearInventory()//clear inventory when needed
     {
@@ -106,6 +105,34 @@ public class Inventory : MonoBehaviour
                 isFull[i] = false;
             }
         }
-        PlayerPrefs.DeleteKey("Inventory");
+        PlayerPrefs.DeleteKey(PlayerData.InventoryKey);
+    }
+    //below methods are need for saving and loading with json file
+    public List<string> GetInventoryItems()
+    {
+        Debug.Log("Inventory is saved");
+        inventoryItems.Clear();
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (isFull[i])
+            {
+                string itemName = slots[i].transform.GetChild(0).gameObject.name.Replace("(Clone)", "").Trim();
+                inventoryItems.Add(itemName);
+            }
+        }
+        return inventoryItems;
+    }
+    public void SetInventoryItems(List<string> items)
+    {
+        ClearInventory();
+        Debug.Log("Inventory is set");
+        foreach (string itemName in items)
+        {
+            GameObject itemPrefab = Resources.Load<GameObject>(itemName);
+            if (itemPrefab != null)
+            {
+                AddItem(itemPrefab);
+            }
+        }
     }
 }

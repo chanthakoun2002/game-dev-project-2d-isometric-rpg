@@ -21,12 +21,12 @@ public class LevelMove_Ref : MonoBehaviour
             if (sceneTransitionManager != null)
             {
                 sceneTransitionManager.ChangeScene(sceneBuildIndex);
-                sceneTransitionManager.SaveSceneIndex(); //save the index of current scene
+                sceneTransitionManager.SaveSceneIndex();
                 
             }
             else
             {
-                Debug.LogError("SceneTransitionManager not found.");
+                Debug.LogError("SceneTransitionManager not found or other error.");
             }
         }
     }

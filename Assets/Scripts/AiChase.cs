@@ -78,7 +78,7 @@ public class AiChase : MonoBehaviour
     {
         //delay finding the player because the player loads in at a diffrent time
         //and enemy cant find them if this is put into the start at the start of the game....
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {

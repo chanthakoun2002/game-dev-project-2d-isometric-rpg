@@ -59,6 +59,7 @@ public class SceneTransitionManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         StartCoroutine(LoadInventoryWhenReady());
+        
     }
 
     IEnumerator LoadInventoryWhenReady()
@@ -69,6 +70,7 @@ public class SceneTransitionManager : MonoBehaviour
             inventory = Inventory.instance;
             yield return null;
         }
+        //inventory.ClearInventory();
         inventory.LoadInventory();
     }
 

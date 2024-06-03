@@ -1,11 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
     public int defaultPlayerHealth = 100; //default player health value
-    //private Inventory inventory;
+    public static GameManager instance;
 
     void Awake()
     {
@@ -16,41 +16,42 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); //destroy duplicate GameManager objects
+            Destroy(gameObject);
         }
     }
+
     public void StartNewGame()
     {
-        SceneManager.LoadScene(1);
-        ClearGameData();//if any data left remaining that is carried to main scene it will clear out when new game is started
+        SceneManager.LoadScene(1); // Load the main gameplay scene
+        ClearGameData();
     }
 
     public void ClearGameData()
     {
-        //clears out the data of the player
+        //clear or default all the data
         PlayerData.SavePlayerHealth(defaultPlayerHealth);
-        if (Inventory.instance != null)
-        {
-            Inventory.instance.ClearInventory();
-        }
-        else
-        {
-            Debug.LogWarning("Inventory instance is null. Cannot clear inventory.");
-        }
-        if (KillCount.instance != null)
-        {
-            KillCount.instance.DefaultScore();
-        }
-        else
-        {
-            Debug.LogWarning("KillCount instance is null. Cannot reset score.");
-        }
+        Inventory.instance.ClearInventory();
+        KillCount.instance.DefaultScore();
     }
+
     public void ExitGame()
     {
-        //clean up any ongoing game data
         ClearGameData();
-        //exit the application
         Application.Quit();
     }
+    // public void SetPlayerDataAfterSceneLoad(GameData data)
+    // {
+    //     StartCoroutine(SetPlayerDataCoroutine(data));
+    // }
+
+    // private IEnumerator SetPlayerDataCoroutine(GameData data)
+    // {
+    //     while (GameObject.FindGameObjectWithTag("Player") == null)
+    //         yield return null;
+
+    //     GameObject player = GameObject.FindGameObjectWithTag("Player");
+    //     player.transform.position = data.playerPosition;
+    //     Inventory.instance.SetInventoryItems(data.inventoryItems);
+    //     Debug.Log("Player data set after scene load.");
+    // }
 }

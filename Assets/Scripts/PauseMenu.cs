@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject saveLoad;
     public void Pause(){
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
@@ -22,10 +23,21 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
-    public void Save(){
-        //
+    public void OpenSaveLoadPanel(){
+        saveLoad.SetActive(true);
     }
-    public void Load(){
-        //
-    }
+    // public void Save()
+    // {
+    //     PlayerData.SaveToJson();
+    //     Debug.Log("Game data saved to JSON.");
+    //     Time.timeScale = 1;
+    //     //pauseMenu.SetActive(false);
+    // }
+    // public void Load()
+    // {
+    //     PlayerData.LoadFromJson();
+    //     Debug.Log("Game data loaded from JSON.");
+    //     Time.timeScale = 1;
+    //     //pauseMenu.SetActive(false);
+    // }
 }

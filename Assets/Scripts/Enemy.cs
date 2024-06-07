@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Android.Types;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -93,7 +92,6 @@ public class Enemy : MonoBehaviour
             Debug.Log("collider should be turned off");  
             canAttack = false;
         }
-        // Disable the entire GameObject
 
         StartCoroutine(DieAfterDealy());
     }

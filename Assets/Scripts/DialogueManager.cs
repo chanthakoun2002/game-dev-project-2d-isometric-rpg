@@ -22,17 +22,17 @@ public class DialogueManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 
     void Start()
     {
-        closeButton.onClick.AddListener(HideDialogue);
+        closeButton.onClick.AddListener(EndDialogue);
         sentences = new Queue<string>();
     }
 
@@ -97,8 +97,8 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
-    public void HideDialogue()
-    {
-        EndDialogue();
-    }
+    // public void HideDialogue()
+    // {
+    //     EndDialogue();
+    // }
 }

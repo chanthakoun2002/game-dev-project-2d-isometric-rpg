@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene(1); // Load the main gameplay scene
+        SceneManager.LoadScene(1); // Load the main game scene
         ClearGameData();
     }
 

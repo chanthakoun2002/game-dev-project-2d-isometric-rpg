@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
+            Debug.Log("POTATO");
         }
         healthBar.SetHealth(currentHealth);
         PlayerData.SavePlayerHealth(currentHealth);

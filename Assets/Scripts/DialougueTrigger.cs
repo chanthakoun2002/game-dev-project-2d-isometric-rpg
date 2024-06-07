@@ -33,7 +33,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             isPlayerInRange = false;
             DialogueManager.instance.HideInteractIcon();
-            DialogueManager.instance.HideDialogue();
+            DialogueManager.instance.EndDialogue();
         }
     }
 }

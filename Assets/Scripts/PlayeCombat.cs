@@ -20,7 +20,6 @@ public class PlayeCombat : MonoBehaviour
     public float attackRate = 2f; //allowed attacks per sec
     float nextAttackTime = 0f;
 
-    // Update is called once per frame
     void Update()
     {
         if(Time.time >= nextAttackTime){
@@ -29,28 +28,17 @@ public class PlayeCombat : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
-        // if (!isAttacking && Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     StartCoroutine(AttackCoroutine());
-        // }
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     Attack();
-        // }
     }
 
     
     void Attack()
     {
-        
-
-        // Play attack animation
+    
         animator.SetTrigger("Attack");
 
         // Detect enemies in range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        // Damage enemies
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("we hit" + enemy.name);

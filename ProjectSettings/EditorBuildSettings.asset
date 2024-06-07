@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_OtherCliff.unity
     guid: a8b7401ad7ad84849a8f6500e674b851
+  - enabled: 1
+    path: Assets/Scenes/Mountain_lake.unity
+    guid: 7f85c73dc30d4444ab0251522232d43d
   - enabled: 0
     path: Assets/Scenes/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729

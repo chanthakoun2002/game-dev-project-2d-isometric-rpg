@@ -24,7 +24,7 @@ public class PlayeCombat : MonoBehaviour
     void Update()
     {
         if(Time.time >= nextAttackTime){
-            if(Input.GetKeyDown(KeyCode.Space)){ //attack is currently set for the space bar
+            if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)){ 
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }

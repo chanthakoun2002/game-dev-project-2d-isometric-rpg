@@ -104,12 +104,32 @@ https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/1219
 - added in a pause button to open a menu to allow for resuming game or quite to menu and buttons for saving and loading games (button for save and load not used currently)
 
 **Issues Encountered:**
-- there is an issue with only scene index 1 with spawn locations not working correctly and the player always spawns at default (WIP)
-- issue with how the main menu is currently working and a new game is not wiping the last game data otherwise game will crash (a new issue that did not happen on the later versions) (WIP)
+- there is an issue with only scene index 1 with spawn locations not working correctly and the player always spawns at default (FIXED)
+- issue with how the main menu is currently working and a new game is not wiping the last game data otherwise game will crash (a new issue that did not happen on the later versions) (FIXED)
 - encountered an issue with inventory not saving between scenes (FIXED)
-- A small bug found that causes some potions to not able to be picked up by the player, which only happens randomly to some potions after the player has used all inventory space and then used all potions in inventory (WIP)
+- A small bug found that causes some potions to not able to be picked up by the player, which only happens randomly to some potions after the player has used all inventory space and then used all potions in inventory (FIXED)
 
 **Lessons Learned:**
 - better understanding of how the unity engine works especially how playerPrefs work and how saving and loading data works with unity
 - understanding of how serializable objects work and how to implement them in unity
+
+**Date:** June 9, 2024
+
+**Features Added/Updated Since Last Update:**
+- added in save load functionality so now players/users are able to open a load/save menu from the main/pause menu to save or load from 3 slots that will save the current game data into JSON file and load their data when they want.
+- added a single interactable NPC that the player can "talk" to at the first level of the game
+- added in music for each scene so now with each scene entered player can hear music
+- added in an additional scene
+- balanced out scenes by adjusting the amount of enemies and potions so earlier scenes are easier while later scenes are harder
+- added in a spawn manager for better spawns and no more issues with players not spawning in locations
+- added in a panel for the load with three slots to allow for a player to save, load, and delete their save
+
+
+**Issues Encountered:**
+- issue with implementing the NPC dialogue and dialogue manager not generating or finding the text it needed to generate (FIXED)
+- bug with button not opening up panel for save/load slots from the main menu (FIXED)
+- ran into an issue with inventory not being loaded in correctly from the JSON, issue relating to the order in which certain scripts are run at the start (FIXED)
+
+**Lessons Learned:**
+- understanding of how to write to a JSON file and load from one and save the data I need and how to apply that data back into my game/code and overall understanding of how persistent data works
   

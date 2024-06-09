@@ -113,7 +113,7 @@ https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/1219
 - better understanding of how the unity engine works especially how playerPrefs work and how saving and loading data works with unity
 - understanding of how serializable objects work and how to implement them in unity
 
-- **Date:** June 9, 2024
+**Date:** June 9, 2024
 
 **Features Added/Updated Since Last Update:**
 - added in save load functionality so now players/users are able to open a load/save menu from the main/pause menu to save or load from 3 slots that will save the current game data into JSON file and load their data when they want.

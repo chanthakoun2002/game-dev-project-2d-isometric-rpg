@@ -128,6 +128,7 @@ https://github.com/chanthakoun2002/game-dev-project-2d-isometric-rpg/assets/1219
 **Issues Encountered:**
 - issue with implementing the NPC dialogue and dialogue manager not generating or finding the text it needed to generate (FIXED)
 - bug with button not opening up panel for save/load slots from the main menu (FIXED)
+- ran into an issue with inventory not being loaded in correctly from the JSON, issue relating to the order in which certain scripts are run at the start (FIXED)
 
 **Lessons Learned:**
 - understanding of how to write to a JSON file and load from one and save the data I need and how to apply that data back into my game/code and overall understanding of how persistent data works

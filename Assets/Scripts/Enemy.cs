@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
         
         Debug.Log("Enemy Died");
         animator.SetTrigger("Death");
-        //when this enemy "dies" a point/kill is added to player score
+        //when this enemy "dies" a point is added to player score
         playerScore.AddScore(1);
 
         if (OnDeath != null)
@@ -98,7 +98,8 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator DieAfterDealy()
     {
-        yield return new WaitForSeconds(2f);//wait for a moment before object is no longer seen
+        //wait for a moment before object is no longer seen
+        yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
     }
 }

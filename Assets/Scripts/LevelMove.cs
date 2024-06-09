@@ -13,7 +13,7 @@ public class LevelMove_Ref : MonoBehaviour
     {
         sceneTransitionManager = FindObjectOfType<SceneTransitionManager>();
     }
-
+    //when player collided with object it will load in next scene designated by the spawn
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject interactCanvas;
     public Button closeButton;
     public float typingSpeed = 0.05f;
-    public float sentenceDelay = 1f; // Delay between sentences
+    public float sentenceDelay = 1f;
 
     private Coroutine typingCoroutine;
     private Queue<string> sentences;
@@ -96,9 +96,4 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(sentenceDelay);
         DisplayNextSentence();
     }
-
-    // public void HideDialogue()
-    // {
-    //     EndDialogue();
-    // }
 }

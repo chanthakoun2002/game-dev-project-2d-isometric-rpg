@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-     void Awake()//this has to be awake if not spawning from load json will not work correctly
+    void Awake()//this has to be awake if not spawning player data from load json will not work correctly
     {
 
         SpawnCharacter[] spawnPoints = FindObjectsOfType<SpawnCharacter>();

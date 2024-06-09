@@ -23,17 +23,6 @@ public class AiChase : MonoBehaviour
 
         enemy.OnDeath.AddListener(OnEnemyDeath);
 
-        // GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        // if (playerObject != null)
-        // {
-        //     target = playerObject.transform;
-        // }
-        // else
-        // {
-        //     Debug.LogError("Player object not found. Make sure it is tagged as 'Player'.");
-        // }
-
-
         //find the player object after a short delay
         StartCoroutine(FindPlayer());
     }
@@ -61,9 +50,7 @@ public class AiChase : MonoBehaviour
             }
             else
             {
-                // Stop moving if the target is out of range
                 agent.SetDestination(transform.position);
-                //stop walk animation
                 animator.SetFloat("Speed", 0f);
             }
         }
@@ -77,7 +64,7 @@ public class AiChase : MonoBehaviour
     IEnumerator FindPlayer()
     {
         //delay finding the player because the player loads in at a diffrent time
-        //and enemy cant find them if this is put into the start at the start of the game....
+        //and enemy cant find them if this is put into the start at the start of the game
         yield return new WaitForSeconds(2f);
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)

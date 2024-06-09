@@ -58,7 +58,7 @@ public class SceneTransitionManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        StartCoroutine(LoadInventoryWhenReady());
+        StartCoroutine(LoadInventoryWhenReady()); //when scene load time is needed to load inventory or else inventory will not work
         
     }
 
@@ -70,7 +70,6 @@ public class SceneTransitionManager : MonoBehaviour
             inventory = Inventory.instance;
             yield return null;
         }
-        //inventory.ClearInventory();
         inventory.LoadInventory();
     }
 

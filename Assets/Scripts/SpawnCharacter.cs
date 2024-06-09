@@ -9,7 +9,7 @@ public class SpawnCharacter : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
 
     public int incomingIndex;
-    public bool defaultSpawn;//default spawn on a spawn point if code messes up just spawn at default
+    public bool defaultSpawn;//default spawn on a spawn point if code error
 
     public void SpawnPlayer()
     {

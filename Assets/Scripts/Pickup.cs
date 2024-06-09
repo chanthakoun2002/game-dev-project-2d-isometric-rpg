@@ -28,7 +28,7 @@ public class Pickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Player") && !isPickedUp){
-            isPickedUp = true; //this is to prevent retriggering to prevent multiplication of item
+            isPickedUp = true; //this is to prevent re-triggering to prevent multiplication of items in iventory
             AddItemToIventory();
         }
     }
@@ -36,7 +36,7 @@ public class Pickup : MonoBehaviour
         for(int i = 0; i < inventory.slots.Length; i++){
                 if(inventory.isFull[i] == false){
                     
-                    //item is added to inventory and inventory is filled
+                    //item is added to inventory and check for if inventory is filled
                     inventory.isFull[i] = true;
                     Instantiate(itemButton, inventory.slots[i].transform, false);
                     Debug.Log("Adding item to inventory slot: " + i);

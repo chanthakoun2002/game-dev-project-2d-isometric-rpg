@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Menu(){
         
-        //when this is clicked this should also clear game data
+        //when this is clicked this should also clear game data when exiting to main
         GameManager.instance.ClearGameData();
         Time.timeScale = 1;
         SceneManager.LoadScene(0); //main menu

@@ -49,13 +49,13 @@ public class PlayerMovement : MonoBehaviour
 
 
     // below code is not used currently
-    public void StopMovement()
-    {
-        canMove = false;
-    }
+    // public void StopMovement()
+    // {
+    //     canMove = false;
+    // }
 
-    public void ResumeMovement()
-    {
-        canMove = true;
-    }
+    // public void ResumeMovement()
+    // {
+    //     canMove = true;
+    // }
 }

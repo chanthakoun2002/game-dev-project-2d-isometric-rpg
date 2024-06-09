@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
         gameManager.StartNewGame();
     }
 
-    //Note: add buttons for start and load here future me
     public void QuiteGame(){
         Debug.Log("Quit");
         Application.Quit();

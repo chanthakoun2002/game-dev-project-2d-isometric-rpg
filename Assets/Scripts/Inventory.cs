@@ -107,7 +107,7 @@ public class Inventory : MonoBehaviour
         }
         PlayerPrefs.DeleteKey(PlayerData.InventoryKey);
     }
-    //below methods are need for saving and loading with json file
+    //below methods are needed for saving and loading with json file related to the players inventory
     public List<string> GetInventoryItems()
     {
         Debug.Log("Inventory is saved");

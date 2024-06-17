@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject saveLoad;
+    [SerializeField] GameObject gameOverScreen;
+
     public void Pause(){
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
@@ -25,6 +27,11 @@ public class PauseMenu : MonoBehaviour
     }
     public void OpenSaveLoadPanel(){
         saveLoad.SetActive(true);
+    }
+    public void ShowGameOverScreen()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
     // public void Save()
     // {

@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     public HealthBar healthBar;
     public Animator animator;
+    public PauseMenu pauseMenu;
     
 
     void Start()
@@ -59,10 +60,10 @@ public class Player : MonoBehaviour
         PlayerData.SavePlayerHealth(maxHealth); // Reset health to default
         
         //NOTE: future me maybe add a panel for usewr when dead to either load a save or exit main menu
-
+        pauseMenu.ShowGameOverScreen();
         //when player dies it will bring user to main menu
-        GameManager.instance.ClearGameData();
-        SceneManager.LoadScene(0);
+        // GameManager.instance.ClearGameData();
+        // SceneManager.LoadScene(0);
 
     }
 }

@@ -1,3 +1,5 @@
+Link to current Playable Game: https://thermalsiren2002.itch.io/sword-adventurer
+
 # game-dev-project-2d-isometric-rpg
 
 ### Author

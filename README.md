@@ -2,7 +2,8 @@
 #### OR https://chanthakoun2002.github.io/SwordAdventurer1.3_WebGL/
 
 
-# game-dev-project-2d-isometric-rpg
+# game-dev-project-2d-isometric-RPG
+# (Sword Adventurer)
 
 ### Author
 - **Author:** Andrew Palamie Chanthakoun

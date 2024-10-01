@@ -5,6 +5,9 @@
 # game-dev-project-2d-isometric-RPG
 # (Sword Adventurer)
 
+###what is this
+this is a game project i made for school and no after graduation is soemething i plant to continue developing as i improve my skills and experience
+
 ### Author
 - **Author:** Andrew Palamie Chanthakoun
 - **Year and Semester:** Spring, 2nd year, 2024
